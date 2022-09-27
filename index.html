@@ -6,15 +6,219 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>water Subscribers</title>
     <link rel="stylesheet" href="asset/materialize/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="asset/css/util.css">
+    <link rel="stylesheet" href="asset/css/materialize-rtl.css">
     <link rel="stylesheet" href="asset/css/style.css">
 </head>
 <body>
 
+  <!-- navbar --------start--------------->
+
+      <nav>
+        <div class="nav-wrapper blue darken-4 b-shadow">
+          <a href="#!" class="brand-logo text-center left-0 right-0">آب بهای مشترکین</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down m-r-20 ">
+            <li><a href="sass.html">صفحه اصلی</a></li>
+            <li><a href="badges.html">ایجاد کاربر</a></li>
+          </ul>
+        </div>
+      </nav>
+    
+      <ul class="sidenav" id="mobile-demo">
+        <li><div class="user-view">
+            <div class="background">
+              <img src="asset/image/poster1.JPG">
+            </div>
+            <a href="#user"><img class="circle" src="asset/image/blackcoat.png"></a>
+            <a href="#name"><span class="white-text name">ABBAS BASSAKI</span></a>
+            <a href="#email"><span class="white-text email">BAQA4731@GMAIL.COM</span></a>
+          </div></li>
+          <li><a href="#!"><i class="material-icons">cloud</i>www.WaterSubscribers.ir</a></li>
+          <li><a href="#!">Moj.abfamarkazi.ir</a></li>
+          <li><div class="divider bgblue"></div></li>
+          <li><a class="subheader">Menu</a></li>
+          <li><a class="waves-effect" href="#!">صفحه اصلی</a></li>
+          <li><a class="waves-effect" href="#!">ایجاد کاربر</a></li>
+      </ul>
+
+  <!-- navbar ----------- end------------------>
+
+
+  
+  
+  <!-- contain section ----------- start------------------>
+
+  <section class="p-r-30 p-l-20 p-t-20">
+
+    <!-- search box ---------------start------------------>
+
+
+    <div id="search_box" class="row  dis-flex align-i-c white">
+      <div class="input-field col l4">
+        <input id="last_name" type="text" class="validate">
+        <label for="last_name"> اشتراک یا کد جغرافیایی</label>
+      </div>
+      <div class="input-field col l6">
+        <input id="icon_prefix" type="text" class="validate ">
+        <label  for="icon_prefix">قسمتی از توضیحات</label>
+      </div>
+      <div class="input-field col l3">
+        <input id="as_date" type="date" class="validate">
+        <label for="as_date">از تاریخ</label>
+      </div>
+      <div class="input-field col l3">
+        <input id="to_date" type="date" class="validate">
+        <label for="to_date">تا تاریخ</label>
+      </div>
+      <div class="input-field col l5 ">
+        <select >
+          <option value="" disabled selected>انتخاب همه...</option>
+          <option value="1">مراجات عمومی</option>
+          <option value="2">انشعابات جدید</option>
+          <option value="3">دعوتنامه</option>
+        </select>
+      </div>
+      <a class="waves-effect waves-light btn m-l-8 m-r-8 col l2">جست و جو</a>
+      <a class="edit_button waves-effect waves-light btn m-l-8 m-r-8 col l2">ایجاد</a>
+    </div>
+    <!-- search box -------------------end------------------->
+
+    <div class="red-text fs-16 z-depth-1 p-all-6 dis-none" >هیچ موردی یافت نشد ...! </div>
+
+    <!-- search result ---------------start------------------>
+    <ul id="search_result_box" class="collapsible p-r-0 white m-b-60">
+      <li class="collaps_title m-b-10">
+        <div class="collapsible-header row flex-w"><i class="list_arrow material-icons m-l-10 m-r-0 fs-30">arrow_drop_down_circle</i>
+          <span class="btn white black-text f-bold col l1 s12 m-r-3">109033</span>
+          <span class="btn white black-text f-bold col l2 s12 m-r-3">1009100001036501</span>
+          <span class="btn white black-text f-bold col l2 s12 m-r-3 highlight">عباس بساکی</span>
+          <span class="btn white black-text f-bold col l4 s12 m-r-3">قسمتی از آخرین توضیحات...</span>
+          <a class="edit_button waves-effect waves-light btn col l2 s12 m-r-3 "><i class="material-icons right m-r-0">edit</i>ویرایش</a>
+        </div>
+        <div class="collapsible-body">
+          <ul class="row">
+            <li class="m-l-10 col l3 s12 m-b-20"><label class="m-l-5">آدرس:</label> شهرک حمید  خیابان وحدت   مجتمع یاس</li>
+            <li class="m-l-10 col l2 s12 m-b-20"><label class="m-l-5">تلفن:</label>09185281978</li>
+            <li class="m-l-10 col l2 s12 m-b-20"><label class="m-l-5">نوع مصرف:</label>مسکونی</li>
+            <li class="m-l-10 col l2 s12 m-b-20"><label class="m-l-5">تاریخ یادآوری:</label>1401/05/25 </li>
+            <li class="m-l-10 col l3 s12 m-b-20"><label class="m-l-5">متن یادآوری :</label>پرداخت قسط آخر آب بنایی</li>
+          </ul>
+
+          <div id="table_operation" >
+            <div class="divider bgblue"></div>
+
+            <table class="responsive-table centered highlight ">
+
+              <thead>
+                <tr class="blue-text">
+                  <th>ردیف</th>
+                  <th>نوع عملیات</th>
+                  <th>تاریخ ثبت</th>
+                  <th>توضیحات</th>
+                  <th>کاربر ثبت کننده</th>
+                  <th>تغییرات</th>
+                </tr>
+              </thead>
+  
+  
+              <tbody >
+                <tr>
+                  <td>1</td>
+                  <td>مراجعات عمومی</td>
+                  <td>1401/02/25</td>
+                  <td>وجود نشتی - اصلاح قبض طبق دستور</td>
+                  <td>میثم حسنبیگی</td>
+                  <td>
+                    <i class="material-icons orange-text darken-2 m-l-5 m-r-5 hov-pointer">edit</i>
+                    <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">delete_forever</i>
+                  </td>
+                </tr>
+              </tbody>
+  
+            </table>
+  
+          </div>
+
+        </div>
+      </li>
+    </ul>
+    <!-- search result ---------------end------------------>
+    <!-- search result Counter ---------------start------------------>
+
+    <div id="search_result_counter" class="pagination_count container flex-sb-m pos-fixed left-0 right-0 bottom-0 p-l-20 p-r-20 p-t-5 p-b-10 white rounded_top_30 z-depth-3 z-100 w-40 border-1">
+
+        <div class="pagination_item_count flex-l p-l-10 flex-l-m">
+          نمایش
+          <span class="m-l-5 m-r-5 max-w-50">
+            <input type="number" class="blue-text darken-2 no-border center-align m-b-0" value="10">
+          </span>
+          of
+          <span class="blue-text darken-2 m-l-5 m-r-5">100</span>
+        </div>
+
+
+        <div>
+          <i class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5 p-t-1 p-b-3 waves-effect waves-light white-text rounded_pill">keyboard_arrow_right</i>
+          <i class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5 p-t-1 p-b-3 waves-effect waves-light white-text rounded_pill">keyboard_arrow_left</i>
+        </div>
+
+      
+      <a class="excle_exit waves-effect waves-light btn green m-r-5  no-wrap"><i class="material-icons right">archive</i>خروجی اکسل</a>
+    </div>
+    
+    <!-- search result Counter ---------------end------------------>
+
+    <!-- edit box modal ---------------start------------------>
+
+    <div id="edit_box_modal_back" class="box_modal_back dis-none"></div>
+    <div id="edit_box_modal" class="box_modal trans-0-3 show">
+
+      <div class="container input-field w-40">
+        <select>
+          <option value="" >عملیات مورد نظر را انتخاب کنید...</option>
+          <option value="1">مراجعات عمومی</option>
+          <option value="2">آب بنایی</option>
+          <option value="3">انشعابات جدید</option>
+          <option value="3">دعوتنامه</option>
+          <option value="3">لیست هایلو</option>
+          <option value="3">گزارشات تشخیصی</option>
+          <option value="3">تست کنتور</option>
+          <option value="3">تعویض کنتور</option>
+          <option value="3">غیر مجاز</option>
+          <option value="3">کمیسیون</option>
+          <option value="3">آب موقت</option>
+          <option value="3">پیگیری خاص</option>
+          <option value="3">امور نیروها و یادداشت</option>
+        </select>
+      </div>
+
+
+      <div>
+
+      </div>
+    </div>
+    
+    <!-- edit box modal ---------------end------------------>
 
 
 
 
-    <script src="asset/materialize/js/materialize.min.js"></script>
+
+
+
+  </section>
+
+
+
+
+  <!-- contain section ----------- end-------------------->
+
+
+
+  <!-- script cod  ---------------------------->
+  <script src="asset/materialize/js/materialize.min.js"></script>
     <script src="asset/js/main.js"></script>
 </body>
 </html>
