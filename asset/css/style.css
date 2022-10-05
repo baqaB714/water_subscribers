@@ -63,6 +63,9 @@ width: 100% !important;
     max-height: calc(100vh - 250px);
     overflow: auto;
 }
+
+.down_moj {position: absolute;}
+
   
 
 
@@ -85,5 +88,12 @@ width: 100% !important;
     .w-40{
       width: 100% !important;
       }
+
+      .down_moj {position: static !important;
+        width: 100%;
+        margin-top: 20px;
+
+      }
+
   
   }

@@ -218,7 +218,7 @@
 .p-all-9{padding: 9px !important;}
 .p-t-0 {padding-top: 0px;}
 .p-t-1 {padding-top: 1px;}
-.p-t-2 {padding-top: 2px;}
+.p-t-2 {padding-top: 2px !important;}
 .p-t-3 {padding-top: 3px;}
 .p-t-4 {padding-top: 4px;}
 .p-t-5 {padding-top: 5px;}
@@ -2294,7 +2294,7 @@
 	display: -webkit-flex;
 	display: -moz-box;
 	display: -ms-flexbox;
-	display: flex;
+	display: flex !important;
 }
 
 /*[ Position ]
@@ -2319,7 +2319,7 @@
 	height: 100%;
 }
 .w-full {width: 100%;}
-.h-full {height: 100%;}
+.h-full {height: 100% !important;}
 .max-w-full {max-width: 100%;}
 .max-h-full {max-height: 100%;}
 .min-w-full {min-width: 100%;}
@@ -2351,6 +2351,7 @@
 .bottom-0 {bottom: 0;}
 .left-0 {left: 0;}
 .left-10 {left: 10px;}
+.left--100 {left: -200px;}
 .right-0 {right: 0;}
 
 .top-auto {top: auto;}
@@ -2440,6 +2441,10 @@
 
 .rounded_top_30{
 	border-radius: 30px 30px 0 0 !important;
+}
+
+.rounded-30{
+	border-radius: 30px !important;
 }
 
 .of-hidden {overflow: hidden;}
@@ -3093,6 +3098,15 @@ align-items: center;
 .no-wrap{
 	white-space: nowrap !important;
 }
+
+.border-on{
+	border: 1px solid black;
+}
+
+.line-inherit{
+	line-height: inherit !important;
+  }
+  
 
 
 

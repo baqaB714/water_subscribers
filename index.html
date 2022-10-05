@@ -11,17 +11,22 @@
     <link rel="stylesheet" href="asset/css/materialize-rtl.css">
     <link rel="stylesheet" href="asset/css/style.css">
 </head>
-<body>
+<body dir="rtl">
 
   <!-- navbar --------start--------------->
 
       <nav>
-        <div class="nav-wrapper blue darken-4 b-shadow">
-          <a href="#!" class="brand-logo text-center left-0 right-0">آب بهای مشترکین</a>
+        <div class="nav-wrapper blue darken-4 b-shadow ">
+          <a href="#!" class="brand-logo text-left left-10 right-0">آب بهای مشترکین</a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-          <ul class="right hide-on-med-and-down m-r-20 ">
+          <ul class="right hide-on-med-and-down m-r-20 dis-flex">
+            <li>
+              <a href="#user" class="dis-flex flex-m p-r-0"><img class="circle max-w-60 m-l-5" src="asset/image/blackcoat.png">ورود-عباس بساکی</a>
+            </li>
             <li><a href="sass.html">صفحه اصلی</a></li>
-            <li><a href="badges.html">ایجاد کاربر</a></li>
+            <li><a href="sass.html">یادداشت</a></li>
+            <li><a href="sass.html">دعوتنامه</a></li>
+            <li><a href="sass.html">فضای سبز</a></li>
           </ul>
         </div>
       </nav>
@@ -40,7 +45,10 @@
           <li><div class="divider bgblue"></div></li>
           <li><a class="subheader">Menu</a></li>
           <li><a class="waves-effect" href="#!">صفحه اصلی</a></li>
-          <li><a class="waves-effect" href="#!">ایجاد کاربر</a></li>
+          <li><a class="waves-effect" href="#!">ورود</a></li>
+          <li><a class="waves-effect" href="#!">یادداشت و پرسنل</a></li>
+          <li><a class="waves-effect" href="#!">دعوتنامه</a></li>
+          <li><a class="waves-effect" href="#!">فضای سبز</a></li>
       </ul>
 
   <!-- navbar ----------- end------------------>
@@ -50,7 +58,7 @@
   
   <!-- contain section ----------- start------------------>
 
-  <section class="p-r-30 p-l-20 p-t-20">
+  <section class="p-r-20 p-l-20 p-t-20">
 
     <!-- search box ---------------start------------------>
 
@@ -75,13 +83,23 @@
       <div class="input-field col l5 ">
         <select >
           <option value="" disabled selected>انتخاب همه...</option>
-          <option value="1">مراجات عمومی</option>
-          <option value="2">انشعابات جدید</option>
-          <option value="3">دعوتنامه</option>
+          <option value="1">مراجعات عمومی</option>
+          <option value="2">آب بنایی</option>
+          <option value="3">انشعابات جدید</option>
+          <option value="4">دعوتنامه</option>
+          <option value="5">لیست هایلو</option>
+          <option value="6">گزارشات تشخیصی</option>
+          <option value="7">تست کنتور</option>
+          <option value="8">تعویض کنتور</option>
+          <option value="9">غیر مجاز</option>
+          <option value="13">مشترکین بدهکار آب بها</option>
+          <option value="10">کمیسیون</option>
+          <option value="11">آب موقت</option>
+          <option value="12">پیگیری خاص</option>
         </select>
       </div>
-      <a class="waves-effect waves-light btn m-l-8 m-r-8 col l2">جست و جو</a>
-      <a class="edit_button waves-effect waves-light btn m-l-8 m-r-8 col l2">ایجاد</a>
+      <a class="waves-effect waves-light btn m-l-8 m-r-8 col l2 dis-flex flex-m flex-sa"><i class="material-icons">search</i>جست و جو</a>
+      <a class="edit_button waves-effect waves-light btn m-l-8 m-r-8 col l2 dis-flex flex-m flex-sa"><i class="material-icons">add_circle</i> ایجاد</a>
     </div>
     <!-- search box -------------------end------------------->
 
@@ -95,16 +113,24 @@
           <span class="btn white black-text f-bold col l2 s12 m-r-3">1009100001036501</span>
           <span class="btn white black-text f-bold col l2 s12 m-r-3 highlight">عباس بساکی</span>
           <span class="btn white black-text f-bold col l4 s12 m-r-3">قسمتی از آخرین توضیحات...</span>
-          <a class="edit_button waves-effect waves-light btn col l2 s12 m-r-3 "><i class="material-icons right m-r-0">edit</i>ویرایش</a>
+          <a class="edit_button waves-effect waves-light btn col l2 s12 m-r-3 "><i class="material-icons right m-r-0">edit</i>افزودن عملیات</a>
         </div>
         <div class="collapsible-body">
           <ul class="row">
             <li class="m-l-10 col l3 s12 m-b-20"><label class="m-l-5">آدرس:</label> شهرک حمید  خیابان وحدت   مجتمع یاس</li>
             <li class="m-l-10 col l2 s12 m-b-20"><label class="m-l-5">تلفن:</label>09185281978</li>
             <li class="m-l-10 col l2 s12 m-b-20"><label class="m-l-5">نوع مصرف:</label>مسکونی</li>
-            <li class="m-l-10 col l2 s12 m-b-20"><label class="m-l-5">تاریخ یادآوری:</label>1401/05/25 </li>
-            <li class="m-l-10 col l3 s12 m-b-20"><label class="m-l-5">متن یادآوری :</label>پرداخت قسط آخر آب بنایی</li>
-          </ul>
+            <li class="m-l-10 col l2 s12 m-b-20 dis-flex"><i class="material-icons m-l-5" >notifications_active</i><label class="fs-15 m-l-5" for="">تاریخ یاد آوری:</label>1401/05/25 </li>
+            <li class="col l2 s12  ">
+              <div class="switch">
+                <label >
+                  مختومه
+                  <input type="checkbox">
+                  <span class="lever"></span>
+                </label>
+              </div>
+            </li>
+    </ul>
 
           <div id="table_operation" >
             <div class="divider bgblue"></div>
@@ -133,6 +159,7 @@
                   <td>
                     <i class="material-icons orange-text darken-2 m-l-5 m-r-5 hov-pointer">edit</i>
                     <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">delete_forever</i>
+                    <i class="material-icons green-text m-l-5 m-r-5 hov-pointer">visibility</i>
                   </td>
                 </tr>
               </tbody>
@@ -173,31 +200,373 @@
     <!-- edit box modal ---------------start------------------>
 
     <div id="edit_box_modal_back" class="box_modal_back dis-none"></div>
-    <div id="edit_box_modal" class="box_modal trans-0-3 show">
+    <div id="edit_box_modal" class="box_modal trans-0-3 p-t-2">
 
-      <div class="container input-field w-40">
-        <select>
-          <option value="" >عملیات مورد نظر را انتخاب کنید...</option>
+      <a class="down_moj waves-effect waves-light btn rounded_pill left-10 top-19">
+        <i class="material-icons left">add_circle_outline</i>دریافت از موج
+      </a>
+
+
+      <div class="container input-field w-40 z-depth-1 p-l-20 p-r-20 p-t-5 p-b-10 rounded-30 blue lighten-4">
+        <select >
+          <option value="" disabled selected>عملیات مورد نظر را انتخاب کنید...</option>
           <option value="1">مراجعات عمومی</option>
           <option value="2">آب بنایی</option>
           <option value="3">انشعابات جدید</option>
-          <option value="3">دعوتنامه</option>
-          <option value="3">لیست هایلو</option>
-          <option value="3">گزارشات تشخیصی</option>
-          <option value="3">تست کنتور</option>
-          <option value="3">تعویض کنتور</option>
-          <option value="3">غیر مجاز</option>
-          <option value="3">کمیسیون</option>
-          <option value="3">آب موقت</option>
-          <option value="3">پیگیری خاص</option>
-          <option value="3">امور نیروها و یادداشت</option>
+          <option value="4">دعوتنامه</option>
+          <option value="5">لیست هایلو</option>
+          <option value="6">گزارشات تشخیصی</option>
+          <option value="7">تست کنتور</option>
+          <option value="8">تعویض کنتور</option>
+          <option value="9">غیر مجاز</option>
+          <option value="13">مشترکین بدهکار آب بها</option>
+          <option value="10">کمیسیون</option>
+          <option value="11">آب موقت</option>
+          <option value="12">پیگیری خاص</option>
         </select>
       </div>
 
 
       <div>
+        <form action="">
+          <ul class="row p-all-9 z-depth-1 blue lighten-5 rounded-30 ">
+            <li class="col l1 s12 m-t-20"><label class="fs-15" for=""> اشتراک:</label><input type="number"></li>
+            <li class="col l2 s12 m-t-20"><label class="fs-15" for=""> کد جغرافیایی:</label><input type="number"></li>
+            <li class="col l2 s12 m-t-20"><label class="fs-15" for=""> نام مشترک:</label><input type="text"></li>
+            <li class="col l2 s12 m-t-20"><label class="fs-15" for=""> موبایل مشترک:</label><input type="number"></li>
+            <li class="col l1 s12 m-t-20"><label class="fs-15" for=""> مامور مربوطه:</label><input type="text"></li>
+            <li class="col l2 s12 m-t-20"><label class="fs-15" for=""> اپراتور ثبت:</label><input type="text"></li>
+            <li class="col l2 s12 m-t-20"><label class="fs-15" for=""> نوع مصرف:</label><input type="text"></li>
+            <li class="col l4 s12 m-t-20"><label class="fs-15" for=""> آدرس:</label><input type="text"></li>
+            <li class="col l2 s12 m-t-20"><label class="fs-15" for=""> تاریخ مراجعه:</label><input type="date"></li>
+            <li class="col l2 s12 m-t-20"><label class="fs-15" for=""> طبق دستور از :</label><input type="text"></li>
+            <li class="col l2 s12 m-t-20 dis-flex flex-c">
+              <div class="switch">
+                <label>
+                  مختومه
+                  <input type="checkbox">
+                  <span class="lever"></span>
+                </label>
+              </div>
+            </li>
+            <li class="col l2 s12 m-t-26 dis-flex flex-col">
+              <form action="#">
+                <div class="file-field input-field">
+                  <div class="btn">
+                    <span>بارگزاری فایل</span>
+                    <input type="file">
+                  </div>
+                  <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                  </div>
+                </div>
+              </form>
+            </li>
 
+
+          </ul>          
+        </form>
       </div>
+
+      <!-- مراجعات عمومی ---------------start------------------>
+
+      <div class="morajeat_omoomi">
+        <form action="">
+          <ul class="row p-all-9 z-depth-1 rounded-30">
+            <li class="col l2 s12 m-t-20"><label class="fs-15" for=""> موضوع:</label>
+                <div class="">
+              <select >
+                <option value="" disabled selected>موضوع مراجعه...</option>
+                <option value="1">مساعدت</option>
+                <option value="2">خانواری</option>
+                <option value="3">اشتباه قرائت</option>
+                <option value="3">حذف کارمزد</option>
+                <option value="3">تخفیف شکستگی</option>
+                <option value="3">اقامتگاه</option>
+                <option value="3">مصرف دوره خالی</option>
+                <option value="3">افزایش ظرفیت</option>
+                <option value="3">تغییر واحد</option>
+                <option value="3">تداخل مصرف</option>
+                <option value="3">تغییر نوع مصرف</option>
+                <option value="3">سایر</option>
+              </select>
+                </div>
+            </li>
+            <li class="col l2 s12 m-t-18"><label class="fs-15 dis-flex" for=""><i class="material-icons m-l-10 red-text" >notifications_active</i> تاریخ یاد آوری:</label><input type="date"></li>
+            <li class="col l3 s12 m-t-20"><label class="fs-15" for=""> متن یادآوری:</label><input type="text"></li>
+            <li class="col l12 s12 m-t-20 "><label class="fs-20 blue-text " for=""> توضیحات جدید:</label><input type="text"></li>
+          </ul>          
+        </form>
+      </div>
+      <!-- مراجعات عمومی  ---------------end------------------>
+
+      <!-- آب بنایی ---------------start------------------>
+      <div class="ab_bannaei">
+        <form action="">
+          <ul class="row p-all-9 z-depth-1 rounded-30">
+            <li class="col l2 s12 m-t-20"><label class="fs-15" for="">شروع یا پایان بنایی</label>
+                <div class="">
+              <select >
+                <option value="" disabled selected>موضوع بنایی:</option>
+                <option value="1">شروع بنایی</option>
+                <option value="2">اتمام بنایی</option>
+              </select>
+                </div>
+            </li>
+            <li class="col l2 s12 m-t-18"><label class="fs-15 dis-flex" for=""><i class="material-icons m-l-10 red-text" >notifications_active</i> تاریخ یاد آوری:</label><input type="date"></li>
+            <li class="col l2 s12 m-t-20"><label class="fs-15" for=""> متن یادآوری:</label><input type="text"></li>
+            <li class="col l2 s12 m-t-20"><label class="fs-15" for=""> مبلغ پرداخت فیش بانک ملی:</label><input type="number"></li>
+            <li class="col l12 s12 m-t-20 "><label class="fs-20 blue-text " for=""> توضیحات جدید:</label><input type="text"></li>
+          </ul>          
+        </form>
+      </div>
+      <!-- آب بنایی ---------------end-------------------->
+
+      <!-- انشعاب جدید---------------start------------------>
+            <div class="ab_jadid">
+              <form action="">
+                <ul class="row p-all-9 z-depth-1 rounded-30">
+                  <li class="col l2 s12 m-t-20"><label class="fs-15" for="">وضعیت تبدیل به بنایی ؟</label>
+                      <div class="">
+                    <select >
+                      <option value="" disabled selected>موضوع بنایی:</option>
+                      <option value="1">تبدیل به بنایی بعد از نصب</option>
+                      <option value="2">ملک قدیمی ساز</option>
+                      <option value="2">مبلغ آب بنایی دریافت شد</option>
+                    </select>
+                      </div>
+                  </li>
+                  <li class="col l2 s12 m-t-20"><label class="fs-15" for=""> مبلغ پرداخت فیش بانک ملی:</label><input type="number"></li>
+                  <li class="col l6 s12 m-t-12 "><label class="fs-20 blue-text " for=""> توضیحات جدید:</label><input type="text"></li>
+                </ul>          
+              </form>
+            </div>
+      <!--انشعاب جدید---------------end-------------------->
+
+      <!--  دعوتنامه ---------------start------------------>
+            <div class="davatnameh">
+              <form action="">
+                <ul class="row p-all-9 z-depth-1 rounded-30">
+                  <li class="col l2 s12 m-t-20"><label class="fs-15" for=""> تاریخ ارسال دعوتنامه :</label><input type="date"></li>
+                  <li class="col l2 s12 m-t-20"><label class="fs-15" for="">مبلغ لیست اشکالات :</label><input type="number"></li>
+                  <li class="col l2 s12 m-t-18"><label class="fs-15 dis-flex" for=""><i class="material-icons m-l-10 red-text" >notifications_active</i> تاریخ پیگیری نتیجه اخطارو قطع:</label><input type="date"></li>
+                  <li class="col l2 s12 m-t-20"><label class="fs-15" for="">نوع اطلاعیه :</label>
+                    <div class="">
+                  <select >
+                    <option value="1">دعوتنامه</option>
+                    <option value="2">قبض ویرایشی مبلغ بالا</option>
+                    <option value="2">صدور یک دوره از قبل</option>
+                  </select>
+                    </div>
+                </li>
+                  <li class="col l12 s12 m-t-12 "><label class="fs-20 blue-text " for=""> توضیحات جدید:</label><input type="text" value="ارسال بازبین"></li>
+                </ul>          
+              </form>
+            </div>
+      <!--دعوتنامه ---------------end-------------------->
+
+      <!--  گزارشات تشخیصی ---------------start------------------>
+      <div class="gozaresh_tashkhisi">
+        <form action="">
+          <ul class="row p-all-9 z-depth-1 rounded-30">
+            <li class="col l2 s12 m-t-20"><label class="fs-15" for="">نوع گزارش :</label>
+              <div class="">
+              <select >
+                <option value="" disabled selected>انتخاب کنید...:</option>
+                <option value="1">تبدیل به بنایی</option>
+                <option value="2">تبدیل به تجاری</option>
+                <option value="2">سایر</option>
+              </select>
+              </div>
+            </li>
+            <li class="col l2 s12 m-t-18"><label class="fs-15 dis-flex" for=""><i class="material-icons m-l-10 red-text" >notifications_active</i> تاریخ پیگیری نتیجه اخطارو قطع:</label><input type="date"></li>
+
+            <li class="col l8 s12 m-t-12 "><label class="fs-20 blue-text " for=""> توضیحات مامور:</label><input type="text"></li>
+          </ul>          
+        </form>
+      </div>
+      <!--گزارشات تشخیصی ---------------end-------------------->
+
+      <!--  آزمایش کنتور ---------------start------------------>
+            <div class="test_contor">
+              <form action="">
+                <ul class="row p-all-9 z-depth-1 rounded-30">
+                  <li class="col l2 s12 m-t-20"><label class="fs-15" for="">نوع آزمایش :</label>
+                    <div class="">
+                    <select >
+                      <option value="" disabled selected>انتخاب کنید...:</option>
+                      <option value="1">اداری</option>
+                      <option value="2">درخواست مشترک</option>
+                    </select>
+                    </div>
+                  </li>
+                  <li class="col l2 s12 m-t-20"><label class="fs-15" for=""> تاریخ انجام آزمایش :</label><input type="date"></li>
+                  <li class="col l2 s12 m-t-20"><label class="fs-15" for=""> شماره فعلی کنتور :</label><input type="number"></li>
+                  <li class="col l2 s12 m-t-20"><label class="fs-15" for="">درصد خطا:</label><input type="number"></li>
+                  <li class="col l2 s12 m-t-20"><label class="fs-15" for="">نتیجه آزمایش :</label>
+                    <div class="">
+                    <select >
+                      <option value="" disabled selected>انتخاب کنید...:</option>
+                      <option value="1">کنتور خراب</option>
+                      <option value="2">کنور سالم</option>
+                    </select>
+                    </div>
+                  </li>
+
+                  <li class="col l8 s12 m-t-12 "><label class="fs-20 blue-text " for=""> توضیحات مامور:</label><input type="text"></li>
+                </ul>          
+              </form>
+            </div>
+      <!--آزمایش کنتور ---------------end-------------------->
+
+      <!--  تعویض کنتور ---------------start------------------>
+            <div class="taviz_contor">
+              <form action="">
+                <ul class="row p-all-9 z-depth-1 rounded-30">
+                  <li class="col l2 s12 m-t-20"><label class="fs-15" for="">دلیل تعویض کنتور :</label>
+                    <div class="">
+                    <select >
+                      <option value="" disabled selected>انتخاب کنید...:</option>
+                      <option value="1">کنتور خراب</option>
+                      <option value="2">طبق دستور</option>
+                      <option value="2">شیشه کدر</option>
+                      <option value="2">شیشه شکسته</option>
+                      <option value="2">سرقتی</option>
+                      <option value="2">آبزنی کنتور</option>
+                      <option value="2">درخواست و خرید مشترک</option>
+                      <option value="2">سایر...</option>
+                    </select>
+                    </div>
+                  </li>
+                  <li class="col l2 s12 m-t-20"><label class="fs-15" for=""> تاریخ تعویض :</label><input type="date"></li>
+                  <li class="col l2 s12 m-t-20"><label class="fs-15" for=""> شماره فعلی کنتور :</label><input type="number"></li>
+                  <li class="col l2 s12 m-t-20"><label class="fs-15" for="">نتیجه عملیات :</label>
+                    <div class="">
+                    <select >
+                      <option value="" disabled selected>انتخاب کنید...:</option>
+                      <option value="1">انجام شد</option>
+                      <option value="2">عدم امکان تعویض</option>
+                    </select>
+                    </div>
+                  </li>
+                  <li class="col l2 s12 m-t-20"><label class="fs-15" for="">نوع قطع آب :</label>
+                    <div class="">
+                    <select >
+                      <option value="" disabled selected>انتخاب کنید...:</option>
+                      <option value="1">با حفاری</option>
+                      <option value="2">بدون حفاری</option>
+                    </select>
+                    </div>
+                  </li>
+
+                  <li class="col l8 s12 m-t-12 "><label class="fs-20 blue-text " for=""> توضیحات جدید:</label><input type="text"></li>
+                </ul>          
+              </form>
+            </div>
+      <!--تعویض کنتور ---------------end-------------------->
+
+      <!--  غیرمجاز ---------------start------------------>
+            <div class="gozaresh_tashkhisi">
+              <form action="">
+                <ul class="row p-all-9 z-depth-1 rounded-30">
+                  <li class="col l2 s12 m-t-20"><label class="fs-15" for="">نوع گزارش :</label>
+                    <div class="">
+                    <select >
+                      <option value="" disabled selected>انتخاب کنید...:</option>
+                      <option value="1">انشعاب غیر مجاز</option>
+                      <option value="2">آب به همسایه</option>
+                      <option value="2">مصرف بدون کنتور</option>
+                      <option value="2">کنتور معکوس</option>
+                    </select>
+                    </div>
+                  </li>
+                  <li class="col l2 s12 m-t-20"><label class="fs-15" for=""> تاریخ اصلاح انشعاب :</label><input type="date"></li>
+                  
+                  <li class="col l2 s12 m-t-18"><label class="fs-15 dis-flex" for=""><i class="material-icons m-l-10 red-text" >notifications_active</i> تاریخ پیگیری نتیجه اخطارو قطع:</label><input type="date"></li>
+                  <li class="col l12 s12 m-t-12 "><label class="fs-20 blue-text " for=""> توضیحات مامور:</label><input type="text"></li>
+                </ul>          
+              </form>
+            </div>
+      <!--غیرمجاز ---------------end-------------------->
+
+      <!--  بدهکاران آب بها ---------------start------------------>
+            <div class="gozaresh_tashkhisi">
+              <form action="">
+                <ul class="row p-all-9 z-depth-1 rounded-30">
+                  <li class="col l2 s12 m-t-18"><label class="fs-15 dis-flex" for=""><i class="material-icons m-l-10 red-text" >notifications_active</i> تاریخ پیگیری :</label><input type="date"></li>
+                  <li class="col l2 s12 m-t-20"><label class="fs-15" for=""> مبلغ بدهی :</label><input type="number"></li>
+                  <li class="col l8 s12 m-t-12 "><label class="fs-20 blue-text " for=""> توضیحات :</label><input type="text"></li>
+                </ul>          
+              </form>
+            </div>
+      <!--بدهکاران آب بها ---------------end-------------------->
+
+      <!-- کمیسیون ---------------start------------------>
+
+            <div class="morajeat_omoomi">
+              <form action="">
+                <ul class="row p-all-9 z-depth-1 rounded-30">
+                  <li class="col l2 s12 m-t-18"><label class="fs-15 dis-flex" for="">تاریخ کمیسیون:</label><input type="date"></li>
+                  <li class="col l7 s12 m-t-12 "><label class="fs-20 blue-text " for=""> توضیحات:</label><input type="text"></li>
+                  <li class="col l12 s12 m-t-20 "><label class="fs-20 blue-text " for=""> نظر کمیته اصلاح قبض:</label><input type="text"></li>
+                </ul>          
+              </form>
+            </div>
+      <!-- کمیسیون ---------------end------------------>
+
+      <!--  آب موقت ---------------start------------------>
+            <div class="gozaresh_tashkhisi">
+              <form action="">
+                <ul class="row p-all-9 z-depth-1 rounded-30">
+                  <li class="col l2 s12 m-t-18"><label class="fs-15 dis-flex" for=""><i class="material-icons m-l-10 red-text" >notifications_active</i> تاریخ پیگیری :</label><input type="date"></li>
+                  <li class="col l2 s12 m-t-20"><label class="fs-15" for=""> مبلغ پرداخت فیش بانک ملی :</label><input type="number"></li>
+                  <li class="col l2 s12 m-t-20"><label class="fs-15" for=""> تاریخ جمع آوری :</label><input type="date"></li>
+                  <li class="col l6 s12 m-t-12 "><label class="fs-20 blue-text " for=""> توضیحات :</label><input type="text"></li>
+                </ul>          
+              </form>
+            </div>
+      <!--آب موقت ---------------end-------------------->
+      <!-- پیگیری خاص ---------------start------------------>
+
+            <div class="morajeat_omoomi">
+              <form action="">
+                <ul class="row p-all-9 z-depth-1 rounded-30">
+                  <li class="col l2 s12 m-t-20"><label class="fs-15" for=""> موضوع:</label>
+                      <div class="">
+                    <select >
+                      <option value="" disabled selected>موضوع مراجعه...</option>
+                      <option value="1">مساعدت</option>
+                      <option value="2">خانواری</option>
+                      <option value="3">اشتباه قرائت</option>
+                      <option value="3">حذف کارمزد</option>
+                      <option value="3">تخفیف شکستگی</option>
+                      <option value="3">اقامتگاه</option>
+                      <option value="3">مصرف دوره خالی</option>
+                      <option value="3">افزایش ظرفیت</option>
+                      <option value="3">تغییر واحد</option>
+                      <option value="3">تداخل مصرف</option>
+                      <option value="3">تغییر نوع مصرف</option>
+                      <option value="3">سایر</option>
+                    </select>
+                      </div>
+                  </li>
+                  <li class="col l2 s12 m-t-18"><label class="fs-15 dis-flex" for=""><i class="material-icons m-l-10 red-text" >notifications_active</i> تاریخ یاد آوری:</label><input type="date"></li>
+                  <li class="col l3 s12 m-t-20"><label class="fs-15" for=""> متن یادآوری:</label><input type="text"></li>
+                  <li class="col l5 s12 m-t-12 "><label class="fs-20 blue-text " for=""> توضیحات جدید:</label><input type="text"></li>
+                </ul>          
+              </form>
+            </div>
+      <!--پیگیری خاص---------------end------------------>
+      
+      
+
+
+      <div class="container dis-flex flex-c">
+        <a class="waves-effect waves-light btn-large m-l-10 w-40  green darken-3"><i class="material-icons right">check_circle</i>ثبت</a>
+        <a class="waves-effect waves-light btn-large m-r-10 red darken-1"><i class="material-icons right">close</i>لغو</a>
+      </div>
+
+
     </div>
     
     <!-- edit box modal ---------------end------------------>

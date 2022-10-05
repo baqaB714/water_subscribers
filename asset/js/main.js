@@ -33,4 +33,40 @@
 
   });
 
+  // fetch('https://jsonplaceholder.typicode.com/posts/1')
+  // .then((response) => response.json())
+  // .then((json) => console.log(json));
+
+
+
+
+
+  // console.log(1);
+  
+  
+  // new Promise((resolve, reject) => {
+  //   setTimeout(() => {
+  //     console.log(2);
+  //     // resolve(222);
+  //     reject(888);
+      
+  //   }, 1000);
+  // }).then(
+  //   function (params) {
+  //     console.log(params);
+  //     console.log(3);
+      
+  //   }
+  //   ).catch(
+  //     function (params) {
+  //       console.log(params);
+  //     }
+  //     )
+      
+  //     console.log(4);
+  //     console.log(5);
+
+
+
+
 
