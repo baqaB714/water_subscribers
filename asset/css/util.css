@@ -2326,6 +2326,7 @@
 .min-h-full {min-height: 100%;}
 .w-30-px{width: 30px;}
 .w-40{width: 40% !important;}
+.w-30{width: 30% !important;}
 
 .max-w-10{max-width: 10px;}
 .max-w-20{max-width: 20px;}
@@ -3105,6 +3106,10 @@ align-items: center;
 
 .line-inherit{
 	line-height: inherit !important;
+  }
+
+  .h-100v{
+	height: 100vh;
   }
   
 

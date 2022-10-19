@@ -81,6 +81,14 @@ width: 100% !important;
 
     }
 
+    .w-30{
+      width: 100% !important;}
+
+
+    .nav_title{
+      display: none !important;
+    }
+
     #search_box a{
       margin-bottom: 1rem;
     }
