@@ -71,13 +71,9 @@
 
 
     <div id="search_box" class="row w-100 dis-flex align-i-c white">
-      <div class="input-field col l4">
-        <input id="last_name" type="text" class="validate">
-        <label for="last_name"> اشتراک یا کد جغرافیایی</label>
-      </div>
-      <div class="input-field col l6">
-        <input id="icon_prefix" type="text" class="validate ">
-        <label  for="icon_prefix">قسمتی از توضیحات</label>
+      <div class="input-field col l4" x-init="$watch('valueSearch' , (value)=>handelSearch(value))" >
+        <input id="last_name" type="text" class="validate" x-model="valueSearch" >
+        <label for="last_name"> بخشی از مشخصات ...</label>
       </div>
       <div class="input-field col l3">
         <input id="as_date" type="date" class="validate">
@@ -87,41 +83,37 @@
         <input id="to_date" type="date" class="validate">
         <label for="to_date">تا تاریخ</label>
       </div>
-      <div class="input-field col l5 ">
-        <select >
+      <div class="input-field col l5 "  >
+        <select x-init="$watch('operationSearch' , (value)=>handelOperation(value))" x-model ="operationSearch" >
           <option value="" disabled selected>انتخاب همه...</option>
-          <option value="1">مراجعات عمومی</option>
-          <option value="2">آب بنایی</option>
-          <option value="3">انشعابات جدید</option>
-          <option value="4">دعوتنامه</option>
-          <option value="5">لیست هایلو</option>
-          <option value="6">گزارشات تشخیصی</option>
-          <option value="7">تست کنتور</option>
-          <option value="8">تعویض کنتور</option>
-          <option value="9">غیر مجاز</option>
-          <option value="13">مشترکین بدهکار آب بها</option>
-          <option value="10">کمیسیون</option>
-          <option value="11">آب موقت</option>
-          <option value="12">پیگیری خاص</option>
+
+          <template x-for="opr in operationsArr">
+            <option x-bind:value="opr.id" x-text="opr.title"></option>
+          </template>
+
         </select>
       </div>
       <span x-on:click="getUsers()" id="search_btn" class="waves-effect waves-light btn m-l-8 m-r-8 col l2 dis-flex flex-m flex-sa"><i class="material-icons">search</i>جستجو</span>
-      <a class="edit_button waves-effect waves-light btn m-l-8 m-r-8 col l2 dis-flex flex-m flex-sa"><i class="material-icons">add_circle</i> ایجاد</a>
+      <a x-on:click="showAddModal = true" class="edit_button waves-effect waves-light btn m-l-8 m-r-8 col l2 dis-flex flex-m flex-sa"><i class="material-icons">add_circle</i> ایجاد</a>
     </div>
     <!-- search box -------------------end------------------->
 
     <div class="red-text fs-16 z-depth-1 p-all-6 dis-none" >هیچ موردی یافت نشد ...! </div>
 
     <!-- search result ---------------start------------------>
+      <div x-show="isError" class="red darken-3 rounded_pill p-all-3 text-white fs-20 text-center">
+        <div>متاسفانه مشکلی پیش آمده</div>
+      </div>
+
     <ul id="search_result_box" class="collapsible p-r-0 white m-b-60">
-      <template x-for="user in users">
+      <template x-for="user in pageUsers">
         <li class="collaps_title m-b-10">
-          <div class="collapsible-header row flex-w"><i class="list_arrow material-icons m-l-10 m-r-0 fs-30">arrow_drop_down_circle</i>
-            <span class="btn white black-text f-bold col l1 s12 m-r-3">109033</span>
-            <span class="btn white black-text f-bold col l2 s12 m-r-3">1009100001036501</span>
-            <span class="btn white black-text f-bold col l2 s12 m-r-3 highlight">عباس بساکی</span>
-            <span class="btn white black-text f-bold col l4 s12 m-r-3">قسمتی از آخرین توضیحات...</span>
-            <a class="edit_button waves-effect waves-light btn col l2 s12 m-r-3 "><i class="material-icons right m-r-0">edit</i>افزودن عملیات</a>
+          <div class="collapsible-header row flex-w"><i class="list_arrow material-icons m-l-10 m-r-0 fs-30 teal-text ">arrow_drop_down_circle</i>
+            <span class="flex-c-m z-depth-1 white black-text f-bold col l1 s12 m-r-3" x-text="user.id" ></span>
+            <span class="flex-c-m z-depth-1 white black-text f-bold col l2 s12 m-r-3 truncate" x-text="user.phone" ></span>
+            <span class=" white black-text f-bold col l2 s12 m-r-3 highlight flex-c-m z-depth-1" x-text="user.name"></span>
+            <span class="flex-l-m z-depth-1 white black-text f-bold col l4 s12 m-r-3 truncate" x-text="user.company.bs"></span>
+            <a x-on:click="showAddModal = true" class="edit_button waves-effect waves-light btn col l2 s12 m-r-3 "><i class="material-icons right m-r-0">edit</i>افزودن عملیات</a>
           </div>
           <div class="collapsible-body grey lighten-4">
             <ul class=" row ">
@@ -166,7 +158,7 @@
                     <td>وجود نشتی - اصلاح قبض طبق دستور</td>
                     <td>میثم حسنبیگی</td>
                     <td>
-                      <i class="material-icons orange-text darken-2 m-l-5 m-r-5 hov-pointer">edit</i>
+                      <i x-on:click="showAddModal = true" class="material-icons orange-text darken-2 m-l-5 m-r-5 hov-pointer">edit</i>
                       <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">delete_forever</i>
                       <i class="material-icons green-text m-l-5 m-r-5 hov-pointer">visibility</i>
                     </td>
@@ -185,21 +177,28 @@
     <!-- search result ---------------end------------------>
     <!-- search result Counter ---------------start------------------>
 
-    <div id="search_result_counter" class="pagination_count container flex-sb-m pos-fixed left-0 right-0 bottom-0 p-l-20 p-r-20 p-t-5 p-b-10 white rounded_top_30 z-depth-3 z-100 w-40 border-1">
+    <div id="search_result_counter" class="pagination_count container flex-sb-m pos-fixed left-0 right-0 bottom-0 p-l-20 p-r-20 p-t-5 p-b-10 white rounded_top_30 z-depth-3 z-100 w-50 border-1">
 
         <div class="pagination_item_count flex-l p-l-10 flex-l-m">
           نمایش
           <span class="m-l-5 m-r-5 max-w-50">
-            <input type="number" class="blue-text darken-2 no-border center-align m-b-0" value="10">
+            <input type="number" class="blue-text darken-2 no-border center-align m-b-0" x-on:change="changeItemCount($el)" x-bind:value="itemsCount" >
           </span>
-          of
-          <span class="blue-text darken-2 m-l-5 m-r-5">100</span>
+          از
+          <span class="blue-text darken-2 m-r-20" x-text="users.length"></span>
         </div>
-
+        
+        <span class="text-center  dis-none-in-phone">
+          صفحه:
+          <span x-text="currentPage" class="rounded_pill p-t-3 p-b-1 p-l-10 p-r-10 green text-white"></span>
+          از:
+          <span x-text="pagecount" class="rounded_pill p-t-3 p-b-1 p-l-10 p-r-10 green text-white"></span>
+        </span>
+          
 
         <div>
-          <i class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5 p-t-1 p-b-3 waves-effect waves-light white-text rounded_pill">keyboard_arrow_right</i>
-          <i class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5 p-t-1 p-b-3 waves-effect waves-light white-text rounded_pill">keyboard_arrow_left</i>
+          <i x-on:click="nextPage()" class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5 p-t-1 p-b-3 waves-effect waves-light white-text rounded_pill">keyboard_arrow_right</i>
+          <i x-on:click="perPage()" class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5 p-t-1 p-b-3 waves-effect waves-light white-text rounded_pill">keyboard_arrow_left</i>
         </div>
 
       
@@ -210,30 +209,20 @@
 
     <!-- edit box modal ---------------start------------------>
 
-    <div id="edit_box_modal_back" class="box_modal_back dis-none"></div>
-    <div id="edit_box_modal" class="box_modal trans-0-3 p-t-2">
+    <div id="edit_box_modal_back" class="box_modal_back" x-show="showAddModal" x-transition x-on:click="showAddModal = false" ></div>
+    <div id="edit_box_modal" class="box_modal trans-0-4 p-t-2" x-bind:class="{'show' : showAddModal}">
 
-      <a class="down_moj waves-effect waves-light btn rounded_pill left-10 top-19">
+      <a  class="down_moj waves-effect waves-light btn rounded_pill left-10 top-19">
         <i class="material-icons left">add_circle_outline</i>دریافت از موج
       </a>
 
 
       <div class="container input-field w-40 z-depth-1 p-l-20 p-r-20 p-t-5 p-b-10 rounded-30 blue lighten-4">
-        <select >
+        <select x-init="$watch('operationSearch' , (value)=>handelOperation(value))" x-model ="operationSearch" >
           <option value="" disabled selected>عملیات مورد نظر را انتخاب کنید...</option>
-          <option value="1">مراجعات عمومی</option>
-          <option value="2">آب بنایی</option>
-          <option value="3">انشعابات جدید</option>
-          <option value="4">دعوتنامه</option>
-          <option value="5">لیست هایلو</option>
-          <option value="6">گزارشات تشخیصی</option>
-          <option value="7">تست کنتور</option>
-          <option value="8">تعویض کنتور</option>
-          <option value="9">غیر مجاز</option>
-          <option value="13">مشترکین بدهکار آب بها</option>
-          <option value="10">کمیسیون</option>
-          <option value="11">آب موقت</option>
-          <option value="12">پیگیری خاص</option>
+          <template x-for="opr in operationsArr">
+            <option x-bind:value="opr.id" x-text="opr.title"></option>
+          </template>
         </select>
       </div>
 
@@ -281,7 +270,7 @@
 
       <!-- مراجعات عمومی ---------------start------------------>
 
-      <div class="morajeat_omoomi">
+      <div x-show="operationSearch==1" class="morajeat_omoomi">
         <form action="">
           <ul class="row p-all-9 z-depth-1 rounded-30">
             <li class="col l2 s12 m-t-20"><label class="fs-15" for=""> موضوع:</label>
@@ -299,6 +288,8 @@
                 <option value="3">تغییر واحد</option>
                 <option value="3">تداخل مصرف</option>
                 <option value="3">تغییر نوع مصرف</option>
+                <option value="3">مساعدت</option>
+                <option value="3">اشکال سیستمی</option>
                 <option value="3">سایر</option>
               </select>
                 </div>
@@ -312,7 +303,7 @@
       <!-- مراجعات عمومی  ---------------end------------------>
 
       <!-- آب بنایی ---------------start------------------>
-      <div class="ab_bannaei">
+      <div x-show="operationSearch ==2" class="ab_bannaei">
         <form action="">
           <ul class="row p-all-9 z-depth-1 rounded-30">
             <li class="col l2 s12 m-t-20"><label class="fs-15" for="">شروع یا پایان بنایی</label>
@@ -334,7 +325,7 @@
       <!-- آب بنایی ---------------end-------------------->
 
       <!-- انشعاب جدید---------------start------------------>
-            <div class="ab_jadid">
+            <div x-show="operationSearch ==3" class="ab_jadid">
               <form action="">
                 <ul class="row p-all-9 z-depth-1 rounded-30">
                   <li class="col l2 s12 m-t-20"><label class="fs-15" for="">وضعیت تبدیل به بنایی ؟</label>
@@ -355,7 +346,7 @@
       <!--انشعاب جدید---------------end-------------------->
 
       <!--  دعوتنامه ---------------start------------------>
-            <div class="davatnameh">
+            <div x-show="operationSearch ==4" class="davatnameh">
               <form action="">
                 <ul class="row p-all-9 z-depth-1 rounded-30">
                   <li class="col l2 s12 m-t-20"><label class="fs-15" for=""> تاریخ ارسال دعوتنامه :</label><input type="date"></li>
@@ -376,8 +367,11 @@
             </div>
       <!--دعوتنامه ---------------end-------------------->
 
+      <!--لیست هایلو --------------start-------------------->
+      <!--لیست هایلو ---------------end-------------------->
+
       <!--  گزارشات تشخیصی ---------------start------------------>
-      <div class="gozaresh_tashkhisi">
+      <div x-show="operationSearch ==6" class="gozaresh_tashkhisi">
         <form action="">
           <ul class="row p-all-9 z-depth-1 rounded-30">
             <li class="col l2 s12 m-t-20"><label class="fs-15" for="">نوع گزارش :</label>
@@ -399,7 +393,7 @@
       <!--گزارشات تشخیصی ---------------end-------------------->
 
       <!--  آزمایش کنتور ---------------start------------------>
-            <div class="test_contor">
+            <div x-show="operationSearch ==7" class="test_contor">
               <form action="">
                 <ul class="row p-all-9 z-depth-1 rounded-30">
                   <li class="col l2 s12 m-t-20"><label class="fs-15" for="">نوع آزمایش :</label>
@@ -431,7 +425,7 @@
       <!--آزمایش کنتور ---------------end-------------------->
 
       <!--  تعویض کنتور ---------------start------------------>
-            <div class="taviz_contor">
+            <div x-show="operationSearch ==8" class="taviz_contor">
               <form action="">
                 <ul class="row p-all-9 z-depth-1 rounded-30">
                   <li class="col l2 s12 m-t-20"><label class="fs-15" for="">دلیل تعویض کنتور :</label>
@@ -477,7 +471,7 @@
       <!--تعویض کنتور ---------------end-------------------->
 
       <!--  غیرمجاز ---------------start------------------>
-            <div class="gozaresh_tashkhisi">
+            <div x-show="operationSearch ==9" class="gozaresh_tashkhisi">
               <form action="">
                 <ul class="row p-all-9 z-depth-1 rounded-30">
                   <li class="col l2 s12 m-t-20"><label class="fs-15" for="">نوع گزارش :</label>
@@ -501,7 +495,7 @@
       <!--غیرمجاز ---------------end-------------------->
 
       <!--  بدهکاران آب بها ---------------start------------------>
-            <div class="gozaresh_tashkhisi">
+            <div x-show="operationSearch ==10" class="gozaresh_tashkhisi">
               <form action="">
                 <ul class="row p-all-9 z-depth-1 rounded-30">
                   <li class="col l2 s12 m-t-18"><label class="fs-15 dis-flex" for=""><i class="material-icons m-l-10 red-text" >notifications_active</i> تاریخ پیگیری :</label><input type="date"></li>
@@ -514,7 +508,7 @@
 
       <!-- کمیسیون ---------------start------------------>
 
-            <div class="morajeat_omoomi">
+            <div x-show="operationSearch ==11" class="morajeat_omoomi">
               <form action="">
                 <ul class="row p-all-9 z-depth-1 rounded-30">
                   <li class="col l2 s12 m-t-18"><label class="fs-15 dis-flex" for="">تاریخ کمیسیون:</label><input type="date"></li>
@@ -526,7 +520,7 @@
       <!-- کمیسیون ---------------end------------------>
 
       <!--  آب موقت ---------------start------------------>
-            <div class="gozaresh_tashkhisi">
+            <div x-show="operationSearch ==12" class="gozaresh_tashkhisi">
               <form action="">
                 <ul class="row p-all-9 z-depth-1 rounded-30">
                   <li class="col l2 s12 m-t-18"><label class="fs-15 dis-flex" for=""><i class="material-icons m-l-10 red-text" >notifications_active</i> تاریخ پیگیری :</label><input type="date"></li>
@@ -539,7 +533,7 @@
       <!--آب موقت ---------------end-------------------->
       <!-- پیگیری خاص ---------------start------------------>
 
-            <div class="morajeat_omoomi">
+            <div x-show="operationSearch ==13" class="morajeat_omoomi">
               <form action="">
                 <ul class="row p-all-9 z-depth-1 rounded-30">
                   <li class="col l2 s12 m-t-20"><label class="fs-15" for=""> موضوع:</label>

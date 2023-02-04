@@ -11,11 +11,11 @@
     var instances = M.FormSelect.init(elems2, {});
     
     
-    document.getElementById('edit_box_modal_back').addEventListener('click' , function(e){
-      document.getElementById('edit_box_modal').classList.remove('show')
-      e.target.classList.add('dis-none')
+    // document.getElementById('edit_box_modal_back').addEventListener('click' , function(e){
+    //   document.getElementById('edit_box_modal').classList.remove('show')
+    //   e.target.classList.add('dis-none')
 
-    })
+    // })
 
     var elems3 = document.querySelectorAll('.fixed-action-btn');
     var instances = M.FloatingActionButton.init(elems3, {
@@ -23,14 +23,14 @@
       hoverEnabled: false
     });
 
-    for (const item of document.querySelectorAll('.edit_button')) {
-      item.addEventListener('click', function (e) {
-        e.stopPropagation()
-        document.getElementById('edit_box_modal').classList.add('show')
-        document.getElementById('edit_box_modal_back').classList.remove('dis-none')
+    // for (const item of document.querySelectorAll('.edit_button')) {
+    //   item.addEventListener('click', function (e) {
+    //     e.stopPropagation()
+    //     document.getElementById('edit_box_modal').classList.add('show')
+    //     document.getElementById('edit_box_modal_back').classList.remove('dis-none')
         
-      })
-    }
+    //   })
+    // }
 
     // ------------search button------------
 

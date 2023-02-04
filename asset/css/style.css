@@ -49,6 +49,9 @@
 .w-40{
 width: 40% !important;
 }
+.w-50{
+width: 50% !important;
+}
 .w-100{
 width: 100% !important;
 }
@@ -81,7 +84,11 @@ width: 100% !important;
 
     }
 
-    .w-30{
+    .dis-none-in-phone{
+      display: none;
+    }
+
+    .w-30 , .w-50{
       width: 100% !important;}
 
 
